@@ -10,7 +10,7 @@
 <input type="submit" value="Get Tracks">
 </form>
 
-{{#if tracks}}
+<!-- {{#if tracks}}
 <h1>Here are your tracks:</h1>
 <br>
 <br>
@@ -43,6 +43,48 @@
               {{/each}}
           </p>
         </li>
+    {{/each}}
+  </ul>
+{{/if}} -->
+
+{{#if tracks}}
+<h2>Here are your tracks:</h2>
+<br>
+<br>
+<br>
+    {{#each tracks}}
+      <div class="container">
+        <a href="{{preview_url}}" target="_blank">
+          <img src="{{album.images.1.url}}" alt="" />
+        </a>
+          <p>{{name}}</p>
+          <p>on:  {{album.name}}</p>
+          <p>by: {{#each artists}} {{name}} {{/each}} </p>
+      </div>
+    {{/each}}
+
+{{/if}}
+
+{{#if aTracks}}
+<h2>Here are your tracks:</h2>
+<br>
+<br>
+<br>
+  <ul>
+    {{#each aTracks}}
+      <div class="container">
+        <a href="{{preview_url}}" target="_blank">
+          <img src="{{album.images.1.url}}" alt="" />
+        </a>
+      <p>{{name}}</p>
+          Album: {{album.name}}
+          <p>
+            by: {{#each artists}}
+              {{name}}
+              {{/each}}
+          </p>
+        </li>
+        </div>
     {{/each}}
   </ul>
 {{/if}}

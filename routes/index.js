@@ -21,7 +21,6 @@ router.get('/searchTrack', function(req,res, next) {
   spotifyApi.searchTracks(req.query.trackQuery)
   .then(function(data) {
     var tracks = data.body.tracks.items;
-    console.log(tracks);
     res.render('index', {tracks: tracks});
   }, function(err) {
     console.error(err);
@@ -32,8 +31,7 @@ router.get('/searchArtistTracks', function(req,res,next) {
   spotifyApi.searchTracks('artist:'+req.query.artistTrackQuery)
   .then(function(data) {
     var aTracks = data.body.tracks.items;
-    console.log('Search tracks by '+ req.query.artistTrackQuery + ' in the artist name', data.body.tracks.items);
-    res.render('tracks', {aTracks: aTracks})
+    res.render('index', {aTracks: aTracks})
   }, function(err) {
     console.log('Something went wrong!', err);
   });

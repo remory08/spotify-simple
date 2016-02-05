@@ -4,16 +4,16 @@
 <br>
 <br>
     {{#each tracks}}
-      <a href="{{preview_url}}" target="_blank">
-        <img src="{{album.images.1.url}}" alt="" />
-      </a>
-      <div>
-        <p>{{name}}</p>
-        <p>on:  {{album.name}}</p>
-        <p>by: {{#each artists}} {{name}} {{/each}} </p>
+      <div class="container">
+        <a href="{{preview_url}}" target="_blank">
+          <img src="{{album.images.1.url}}" alt="" />
+        </a>
+          <p>{{name}}</p>
+          <p>on:  {{album.name}}</p>
+          <p>by: {{#each artists}} {{name}} {{/each}} </p>
       </div>
-
     {{/each}}
+
 {{/if}}
 
 {{#if aTracks}}
@@ -23,7 +23,11 @@
 <br>
   <ul>
     {{#each aTracks}}
-        <li>{{name}}
+      <div class="container">
+        <a href="{{preview_url}}" target="_blank">
+          <img src="{{album.images.1.url}}" alt="" />
+        </a>
+      <p>{{name}}</p>
           Album: {{album.name}}
           <p>
             by: {{#each artists}}
@@ -31,6 +35,7 @@
               {{/each}}
           </p>
         </li>
+        </div>
     {{/each}}
   </ul>
 {{/if}}
